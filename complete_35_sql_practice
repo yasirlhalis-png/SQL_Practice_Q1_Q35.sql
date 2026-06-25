@@ -1,0 +1,125 @@
+Q1-Sab customers ka data show karein.
+SELECT * 
+FROM Customers;
+Q2-Sirf Name aur City show karein.
+SELECT Name,City 
+FROM Customers; 
+Q3-Sirf Salary column show karein.
+SELECT Salary 
+FROM Customers;
+Q4-Unique cities show karein.
+SELECT DISTINCT(City) 
+FROM Customers;
+Q5-Unique ages show karein.
+SELECT DISTINCT(Age) 
+FROM Customers;
+Q6-Karachi ke customers show karein.
+SELECT * 
+FROM Customers 
+WHERE City = 'Karachi';
+Q7-Salary 50000 se zyada walay customers show karein.
+SELECT * 
+FROM Customers 
+WHERE Salary > 50000;
+Q8-Age 23 se kam walay customers show karein.
+SELECT * 
+FROM Customers 
+WHERE Age < 23;
+Q9-Salary ascending order me show karein.
+SELECT * 
+FROM Customers 
+ORDER BY Salary ASC;
+Q10-Salary descending order me show karein.
+SELECT * 
+FROM Customers 
+ORDER BY Salary DESC;
+Q11-Name alphabetically show karein.
+SELECT * 
+FROM Customers 
+ORDER BY Name ASC;
+Q12-Karachi ke customers jinki salary 50000 se zyada hai.
+SELECT * 
+FROM Customers 
+WHERE City = 'Karachi' 
+AND Salary > 50000;
+Q13-Lahore ke customers aur age 24 se kam.
+SELECT * 
+FROM Customers 
+WHERE City = 'Lahore' 
+AND Age < 24;
+Q14-Karachi ya Lahore ke customers.
+SELECT * FROM Customers WHERE City IN ('Karachi','Lahore');
+Q15-Age 21 ya 25 walay customers.
+SELECT * FROM Customers WHERE Age IN (21,25);
+Q16-Karachi ke ilawa tamam customers.
+SELECT * FROM Customers WHERE City <> 'Karachi';
+Q17-Salary 60000 nahi honi chahiye.
+SELECT * FROM Customers WHERE Salary <> 60000;
+Q18-Naya customer add karein:
+6, Asad, Multan, 26, 65000
+INSERT INTO Customers (CustomerID, Name, City, Age, Salary)
+VALUES (6, 'Asad', 'Multan', 26, 65000);
+Q19-Ek aur customer add karein:
+7, Hina, Faisalabad, 22, 52000
+INSERT INTO Customers (CustomerID, Name, City, Age, Salary)
+VALUES(7, 'Hina', 'Faisalabad', 22, 52000)
+Q20-Ali ki salary 55000 kar dein.
+UPDATE Customers
+SET Salary = 55000
+WHERE Name = 'Ali';
+Q21-Ahmed ka city Multan kar dein.
+UPDATE Customers
+SET City = 'Multan'
+WHERE Name = 'Ahmed'
+Q22-CustomerID = 7 delete karein.
+DELETE FROM Customers
+WHERE CustomerID = 7;
+Q23-Age 21 wala customer delete karein.
+DELETE FROM Customers
+WHERE Age = 21;
+Q24-Top 3 customers show karein.
+SELECT * FROM customers
+LIMIT 3;
+SELECT TOP 3 * FROM customers;
+Q25-Top 2 highest salaries show karein.
+SELECT * FROM customers
+ORDER BY Salary DESC 
+LIMIT 2;
+SELECT TOP 2 * FROM customers 
+ORDER BY Salary DESC;
+Q26-Maximum salary find karein.
+SELECT MAX(Salary) 
+FROM customers;
+Q27-Minimum salary find karein.
+SELECT MIN(Salary) 
+FROM customers;
+Q28-Total customers count karein.
+SELECT COUNT(*) AS total_customers 
+FROM Customers;
+Q29-Sab salaries ka total nikaalein.
+SELECT SUM(Salary) 
+FROM Customers;
+Q30-Average salary nikaalein.
+SELECT AVG(Salary) 
+FROM Customers;
+Q31-Jin ka naam A se start hota hai.
+SELECT * 
+FROM Customers 
+WHERE Name LIKE 'A%';
+Q32-Jin ka naam a par end hota hai.
+SELECT * 
+FROM Customers 
+WHERE Name LIKE '%a';
+Q33-Jin ke naam me "li" aata ho.
+SELECT * 
+FROM Customers 
+WHERE Name LIKE '%li%';
+Q34-City Lahore se start ho.
+SELECT * 
+FROM Customers 
+WHERE City LIKE 'Lahore%';
+Q35-5 letters ke names show karein.
+SELECT * 
+FROM Customers 
+WHERE len(Name) = 5; 
+
